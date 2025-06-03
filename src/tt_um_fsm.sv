@@ -2,14 +2,14 @@
 
 module tt_um_fsm (
 
-  input wire clk,
+  input logic clk,
   input logic rst_n,
   input logic ena,
   input logic [7:0] ui_in,
-  input wire [7:0] uio_in,
-  output wire [7:0] uo_out,
-  output wire [7:0] uio_out,
-  output wire [7:0] uio_oe
+  input logic [7:0] uio_in,
+  output logic [7:0] uo_out,
+  output logic [7:0] uio_out,
+  output logic [7:0] uio_oe
     // SW0=power_off, SW1=on, SW2=cleaning, SW3=evading
     // led0 y led1 muestran el estado actual
 );
@@ -37,10 +37,15 @@ module tt_um_fsm (
     // conectamos los leds 0 y 1 con el estado en que se encuentran
     assign led = state;
     assign uo_out[1:0] = led;
-    assign uo_out[7:3] = 5'b0;
+    assign uo_out[7:2] = 5'b0;
     assign uio_out = 8'b0;
     assign uio_oe  = 8'b0;
-    //assign rst_n  = 1'b0;
-    //assign ena  = 1'b0;
-        
+    wire _unused_ok = &{
+          1'b0,
+          rst_n,
+          ena,
+          ui_in[7:4],
+          uio_in,
+          1'b0
+      };
 endmodule
