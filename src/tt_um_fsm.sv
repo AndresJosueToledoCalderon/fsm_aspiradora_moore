@@ -24,7 +24,7 @@ module tt_um_fsm (
     
 
     // instanciamos la fsm (las "opoeraciones"), y exponemos solo state
-    FSM_Aspiradora (
+    FSM_Aspiradora aspiradora (
         .clk        (clk),
         .power_off  (power_off),
         .on         (on),
