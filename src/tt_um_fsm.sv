@@ -1,4 +1,4 @@
-`timescale 100ns / 1ps
+//`timescale 100ns / 1ps
 
 module tt_um_fsm (
 
