@@ -2,14 +2,14 @@
 
 module tt_um_fsm (
 
-  input wire clk;
-  input wire rst_n;
-  input wire ena;
-  input wire [7:0] ui_in;
-  input wire [7:0] uio_in;
-  output wire [7:0] uo_out;
-  output wire [7:0] uio_out;
-  output wire [7:0] uio_oe;
+  input wire clk,
+  input wire rst_n,
+  input wire ena,
+  input wire [7:0] ui_in,
+  input wire [7:0] uio_in,
+  output wire [7:0] uo_out,
+  output wire [7:0] uio_out,
+  output wire [7:0] uio_oe
     // SW0=power_off, SW1=on, SW2=cleaning, SW3=evading
     // led0 y led1 muestran el estado actual
 );
