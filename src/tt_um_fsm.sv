@@ -21,7 +21,8 @@ module tt_um_fsm (
     wire cleaning   = ui_in[2];
     wire evading    = ui_in[3];
 
-    
+    logic [1:0] state;
+    logic [1:0] led;
 
     // instanciamos la fsm (las "opoeraciones"), y exponemos solo state
     FSM_Aspiradora aspiradora (
@@ -35,12 +36,8 @@ module tt_um_fsm (
 
     // conectamos los leds 0 y 1 con el estado en que se encuentran
     assign led = uo_out[1:0];
-    assign ui_in[7:4] = 4'b0;
     assign uo_out[7:3] = 5'b0;
     assign uio_out = 8'b0;
     assign uio_oe = 8'b0;
-    assign uio_in = 8'b0;
-    assign ena = 1'b0;
-    assign rst_n = 1'b0;
-    
+        
 endmodule
