@@ -1,6 +1,6 @@
 `timescale 100ns / 1ps
 
-module top_fsm_aspiradora (
+module tt_um_fsm (
     input  wire CLK100MHZ,   // reloj a 100 MHz
     input  wire [3:0] SW,    // SW0=power_off, SW1=on, SW2=cleaning, SW3=evading
     output wire [1:0] led    // led0 y led1 muestran el estado actual
